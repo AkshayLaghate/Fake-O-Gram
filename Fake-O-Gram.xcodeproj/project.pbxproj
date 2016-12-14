@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		007DA6E846067335262484F8 /* Pods_Fake_O_Gram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9E19B84FC3542447DE3503 /* Pods_Fake_O_Gram.framework */; };
 		6D2DA1FD1E0132AA00C40F56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DA1FC1E0132AA00C40F56 /* AppDelegate.swift */; };
-		6D2DA1FF1E0132AA00C40F56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DA1FE1E0132AA00C40F56 /* ViewController.swift */; };
+		6D2DA1FF1E0132AA00C40F56 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DA1FE1E0132AA00C40F56 /* LoginVC.swift */; };
 		6D2DA2021E0132AA00C40F56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DA2001E0132AA00C40F56 /* Main.storyboard */; };
 		6D2DA2041E0132AA00C40F56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DA2031E0132AA00C40F56 /* Assets.xcassets */; };
 		6D2DA2071E0132AA00C40F56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DA2051E0132AA00C40F56 /* LaunchScreen.storyboard */; };
+		6D2DA20F1E01343300C40F56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DA20E1E01343300C40F56 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6D2DA1F91E0132AA00C40F56 /* Fake-O-Gram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fake-O-Gram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2DA1FC1E0132AA00C40F56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6D2DA1FE1E0132AA00C40F56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6D2DA1FE1E0132AA00C40F56 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		6D2DA2011E0132AA00C40F56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D2DA2031E0132AA00C40F56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D2DA2061E0132AA00C40F56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D2DA2081E0132AA00C40F56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D2DA20E1E01343300C40F56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DF9E19B84FC3542447DE3503 /* Pods_Fake_O_Gram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fake_O_Gram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED89F6A75662A1BE49F19AEE /* Pods-Fake-O-Gram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake-O-Gram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fake-O-Gram/Pods-Fake-O-Gram.release.xcconfig"; sourceTree = "<group>"; };
+		FB60E282A9F70466C3E83510 /* Pods-Fake-O-Gram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake-O-Gram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fake-O-Gram/Pods-Fake-O-Gram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007DA6E846067335262484F8 /* Pods_Fake_O_Gram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				6D2DA1FB1E0132AA00C40F56 /* Fake-O-Gram */,
 				6D2DA1FA1E0132AA00C40F56 /* Products */,
+				D05849EE3F5C5D4F6D152F78 /* Pods */,
+				BDE7A67B2E3038D6FE87242F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +63,56 @@
 		6D2DA1FB1E0132AA00C40F56 /* Fake-O-Gram */ = {
 			isa = PBXGroup;
 			children = (
+				6D5C16E51E01371A005F6B33 /* Model */,
+				6D5C16E61E01371F005F6B33 /* View */,
+				6D5C16E71E013723005F6B33 /* Controller */,
 				6D2DA1FC1E0132AA00C40F56 /* AppDelegate.swift */,
-				6D2DA1FE1E0132AA00C40F56 /* ViewController.swift */,
 				6D2DA2001E0132AA00C40F56 /* Main.storyboard */,
 				6D2DA2031E0132AA00C40F56 /* Assets.xcassets */,
 				6D2DA2051E0132AA00C40F56 /* LaunchScreen.storyboard */,
+				6D2DA20E1E01343300C40F56 /* GoogleService-Info.plist */,
 				6D2DA2081E0132AA00C40F56 /* Info.plist */,
 			);
 			path = "Fake-O-Gram";
+			sourceTree = "<group>";
+		};
+		6D5C16E51E01371A005F6B33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6D5C16E61E01371F005F6B33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6D5C16E71E013723005F6B33 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6D2DA1FE1E0132AA00C40F56 /* LoginVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BDE7A67B2E3038D6FE87242F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF9E19B84FC3542447DE3503 /* Pods_Fake_O_Gram.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D05849EE3F5C5D4F6D152F78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB60E282A9F70466C3E83510 /* Pods-Fake-O-Gram.debug.xcconfig */,
+				ED89F6A75662A1BE49F19AEE /* Pods-Fake-O-Gram.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D2DA20B1E0132AA00C40F56 /* Build configuration list for PBXNativeTarget "Fake-O-Gram" */;
 			buildPhases = (
+				0AA025DD2D00EA123545D136 /* [CP] Check Pods Manifest.lock */,
 				6D2DA1F51E0132A900C40F56 /* Sources */,
 				6D2DA1F61E0132A900C40F56 /* Frameworks */,
 				6D2DA1F71E0132A900C40F56 /* Resources */,
+				57C65A81F65F9A02B623C928 /* [CP] Embed Pods Frameworks */,
+				9BEF6EB29F385A5AC1F6CB90 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,17 +181,66 @@
 				6D2DA2071E0132AA00C40F56 /* LaunchScreen.storyboard in Resources */,
 				6D2DA2041E0132AA00C40F56 /* Assets.xcassets in Resources */,
 				6D2DA2021E0132AA00C40F56 /* Main.storyboard in Resources */,
+				6D2DA20F1E01343300C40F56 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AA025DD2D00EA123545D136 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		57C65A81F65F9A02B623C928 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fake-O-Gram/Pods-Fake-O-Gram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BEF6EB29F385A5AC1F6CB90 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fake-O-Gram/Pods-Fake-O-Gram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6D2DA1F51E0132A900C40F56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D2DA1FF1E0132AA00C40F56 /* ViewController.swift in Sources */,
+				6D2DA1FF1E0132AA00C40F56 /* LoginVC.swift in Sources */,
 				6D2DA1FD1E0132AA00C40F56 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +285,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -232,6 +336,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -259,6 +364,7 @@
 		};
 		6D2DA20C1E0132AA00C40F56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB60E282A9F70466C3E83510 /* Pods-Fake-O-Gram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y7XR9L7W6S;
@@ -272,6 +378,7 @@
 		};
 		6D2DA20D1E0132AA00C40F56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED89F6A75662A1BE49F19AEE /* Pods-Fake-O-Gram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y7XR9L7W6S;
@@ -302,6 +409,7 @@
 				6D2DA20D1E0132AA00C40F56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
