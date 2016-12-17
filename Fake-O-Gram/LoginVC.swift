@@ -28,6 +28,37 @@ class LoginVC: UIViewController {
 
     @IBAction func bSignIn(_ sender: UIButton) {
         
+        let email = etUsername.text
+        let password = etPassword.text
+        
+        if email != nil, password != nil{
+            FIRAuth.auth()?.signIn(withEmail: email!, password: password!, completion: { (user, error) in
+                if error == nil{
+                    print("Akki Logged in with email")
+                }
+                else{
+                  
+                    self.createUser(email: email!, pwd: password!)
+                    
+                }
+            })
+        }
+        
+    }
+    
+    func createUser(email: String, pwd: String){
+        FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+            
+            if error == nil{
+                print("Akki User created successfully with email")
+            }
+            
+            else{
+                
+                print("Akki Unable to create user: \(error)")
+            }
+            
+        })
     }
     
     @IBAction func fbSIgnIn(_ sender: UIButton) {
