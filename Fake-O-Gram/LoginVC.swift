@@ -12,7 +12,7 @@ import FBSDKLoginKit
 import Firebase
 import SwiftKeychainWrapper
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var etUsername: UITextField!
     @IBOutlet weak var etPassword: UITextField!
@@ -26,6 +26,10 @@ class LoginVC: UIViewController {
             performSegue(withIdentifier: "FeedVC", sender: nil)
             
         }
+        
+        etUsername.delegate = self
+        etPassword.delegate = self
+        
         
     }
 
@@ -43,7 +47,7 @@ class LoginVC: UIViewController {
                     }
                 }
                 else{
-                  
+                  print("Akki Unable to create user: \(error)")
                     self.createUser(email: email!, pwd: password!)
                     
                 }
@@ -108,6 +112,11 @@ class LoginVC: UIViewController {
         let result = KeychainWrapper.standard.set(uid, forKey: "uid")
         print("Added to Keychain: \(result)")
         performSegue(withIdentifier: "FeedVC", sender: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
