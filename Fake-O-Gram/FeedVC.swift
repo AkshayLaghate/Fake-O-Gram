@@ -15,13 +15,30 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var tabelView: UITableView!
+    
+    var posts = [Post]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tabelView.delegate = self
         tabelView.dataSource = self
         
         DataService.ds.REF_POSTS.observe(.value, with: { (snapShot) in
-            print(snapShot.value)
+            
+            if let snapshots = snapShot.children.allObjects as? [FIRDataSnapshot] {
+                self.posts.removeAll()
+                for snap in snapshots{
+                    print("Snap: \(snap)")
+                    
+                    if let postDict = snap.value as? Dictionary<String,AnyObject>{
+                        let key = snap.key
+                        let post = Post(postId: key, postData: postDict)
+                        self.posts.append(post)
+                    }
+                }
+                
+            }
+            self.tabelView.reloadData()
+            
         })
 
                 // Do any additional setup after loading the view.
@@ -45,11 +62,17 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tabelView.dequeueReusableCell(withIdentifier: "CellItem")!
+        
+        if let cell = tabelView.dequeueReusableCell(withIdentifier: "CellItem") as? CellItem{
+            cell.updateCell(post: posts[indexPath.row])
+            return cell
+        }else{
+            return CellItem()
+        }
     }
 
 }

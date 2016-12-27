@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		007DA6E846067335262484F8 /* Pods_Fake_O_Gram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9E19B84FC3542447DE3503 /* Pods_Fake_O_Gram.framework */; };
 		6D0D5B1B1E12A582004AAD7A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D5B1A1E12A582004AAD7A /* DataService.swift */; };
+		6D0D5B1D1E12B537004AAD7A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D5B1C1E12B537004AAD7A /* Post.swift */; };
 		6D1451DF1E058E2D00F78CDF /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1451DE1E058E2D00F78CDF /* FeedVC.swift */; };
 		6D2DA1FD1E0132AA00C40F56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DA1FC1E0132AA00C40F56 /* AppDelegate.swift */; };
 		6D2DA1FF1E0132AA00C40F56 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DA1FE1E0132AA00C40F56 /* LoginVC.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		6D0D5B1A1E12A582004AAD7A /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		6D0D5B1C1E12B537004AAD7A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6D1451DD1E058D9D00F78CDF /* Fake-O-Gram.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fake-O-Gram.entitlements"; sourceTree = "<group>"; };
 		6D1451DE1E058E2D00F78CDF /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		6D2DA1F91E0132AA00C40F56 /* Fake-O-Gram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fake-O-Gram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 		6D5C16E51E01371A005F6B33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6D0D5B1C1E12B537004AAD7A /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				6D8CB9E11E0D744B005F2939 /* CellItem.swift in Sources */,
 				6D0D5B1B1E12A582004AAD7A /* DataService.swift in Sources */,
 				6D1451DF1E058E2D00F78CDF /* FeedVC.swift in Sources */,
+				6D0D5B1D1E12B537004AAD7A /* Post.swift in Sources */,
 				6D8CB9E31E0D75D6005F2939 /* CircularImage.swift in Sources */,
 				6D2DA9181E027DF2006A84E3 /* CircularButton.swift in Sources */,
 				6D2DA1FF1E0132AA00C40F56 /* LoginVC.swift in Sources */,

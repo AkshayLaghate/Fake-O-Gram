@@ -23,6 +23,10 @@ class CellItem: UITableViewCell {
         // Initialization code
     }
 
-    
+    func updateCell(post: Post){
+        self.postText.text = post.text
+        self.likesCountLabel.text = "\(post.likes)"
+        
+    }
     
 }
