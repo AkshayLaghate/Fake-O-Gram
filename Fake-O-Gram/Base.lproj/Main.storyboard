@@ -201,12 +201,13 @@
                                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="VxS-hx-zys">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
                                                 <color key="backgroundColor" red="0.00078291585668921471" green="0.72541242837905884" blue="0.80199688673019409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="49" id="65r-tc-c3O"/>
                                                     <constraint firstAttribute="height" constant="49" id="Z5E-iJ-4so"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="AAb-hT-xSs" appends="YES" id="9TB-CN-EkS"/>
+                                                    <outletCollection property="gestureRecognizers" destination="bY7-1D-gfj" appends="YES" id="gYC-JG-J1P"/>
                                                 </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zdy-lh-qC8">
@@ -370,13 +371,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imagePickerButton" destination="VxS-hx-zys" id="jg6-5l-TIp"/>
                         <outlet property="tabelView" destination="KgJ-mr-OQ6" id="80w-1B-fBW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnf-lw-t6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="AAb-hT-xSs"/>
+                <tapGestureRecognizer id="bY7-1D-gfj">
+                    <connections>
+                        <action selector="addImageTapped:" destination="vok-BY-PHM" id="OyW-6g-lVp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="701.60000000000002" y="36.431784107946029"/>
+            <point key="canvasLocation" x="545" y="6"/>
         </scene>
     </scenes>
     <resources>
