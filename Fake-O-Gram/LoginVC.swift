@@ -43,7 +43,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 if error == nil{
                     print("Akki Logged in with email")
                     if let currentUser = user{
-                        self.completSignIn(uid: currentUser.uid)
+                        let userData = ["provider":currentUser.providerID]
+                        self.completSignIn(uid: currentUser.uid, userData: userData)
                     }
                 }
                 else{
@@ -62,7 +63,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             if error == nil{
                 print("Akki User created successfully with email")
                 if let currentUser = user{
-                    self.completSignIn(uid: currentUser.uid)
+                    let userData = ["provider":currentUser.providerID]
+                    self.completSignIn(uid: currentUser.uid, userData: userData)
                 }
             }
             
@@ -101,14 +103,18 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 print("Successfully Logged in with Firebase")
                 
                 if let currentUser = user{
-                   self.completSignIn(uid: currentUser.uid)
+                    let userData = ["provider":credential.provider]
+                   self.completSignIn(uid: currentUser.uid, userData: userData)
                 }
             }
         
         })
     }
     
-    func completSignIn(uid: String){
+    func completSignIn(uid: String, userData: Dictionary<String,String>){
+        
+        DataService.ds.createFirebaseDBUser(uid: uid,userData: userData)
+        
         let result = KeychainWrapper.standard.set(uid, forKey: "uid")
         print("Added to Keychain: \(result)")
         performSegue(withIdentifier: "FeedVC", sender: nil)

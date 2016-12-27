@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		007DA6E846067335262484F8 /* Pods_Fake_O_Gram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9E19B84FC3542447DE3503 /* Pods_Fake_O_Gram.framework */; };
+		6D0D5B1B1E12A582004AAD7A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D5B1A1E12A582004AAD7A /* DataService.swift */; };
 		6D1451DF1E058E2D00F78CDF /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1451DE1E058E2D00F78CDF /* FeedVC.swift */; };
 		6D2DA1FD1E0132AA00C40F56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DA1FC1E0132AA00C40F56 /* AppDelegate.swift */; };
 		6D2DA1FF1E0132AA00C40F56 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DA1FE1E0132AA00C40F56 /* LoginVC.swift */; };
@@ -16,9 +17,12 @@
 		6D2DA2071E0132AA00C40F56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DA2051E0132AA00C40F56 /* LaunchScreen.storyboard */; };
 		6D2DA9181E027DF2006A84E3 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DA9171E027DF2006A84E3 /* CircularButton.swift */; };
 		6D5C16E91E0142A4005F6B33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D5C16E81E0142A4005F6B33 /* GoogleService-Info.plist */; };
+		6D8CB9E11E0D744B005F2939 /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CB9E01E0D744B005F2939 /* CellItem.swift */; };
+		6D8CB9E31E0D75D6005F2939 /* CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CB9E21E0D75D6005F2939 /* CircularImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D0D5B1A1E12A582004AAD7A /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		6D1451DD1E058D9D00F78CDF /* Fake-O-Gram.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fake-O-Gram.entitlements"; sourceTree = "<group>"; };
 		6D1451DE1E058E2D00F78CDF /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		6D2DA1F91E0132AA00C40F56 /* Fake-O-Gram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fake-O-Gram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +34,8 @@
 		6D2DA2081E0132AA00C40F56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D2DA9171E027DF2006A84E3 /* CircularButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
 		6D5C16E81E0142A4005F6B33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6D8CB9E01E0D744B005F2939 /* CellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
+		6D8CB9E21E0D75D6005F2939 /* CircularImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImage.swift; sourceTree = "<group>"; };
 		DF9E19B84FC3542447DE3503 /* Pods_Fake_O_Gram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fake_O_Gram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED89F6A75662A1BE49F19AEE /* Pods-Fake-O-Gram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake-O-Gram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fake-O-Gram/Pods-Fake-O-Gram.release.xcconfig"; sourceTree = "<group>"; };
 		FB60E282A9F70466C3E83510 /* Pods-Fake-O-Gram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fake-O-Gram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fake-O-Gram/Pods-Fake-O-Gram.debug.xcconfig"; sourceTree = "<group>"; };
@@ -47,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D0D5B191E12A573004AAD7A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6D0D5B1A1E12A582004AAD7A /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		6D2DA1F01E0132A900C40F56 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +82,7 @@
 		6D2DA1FB1E0132AA00C40F56 /* Fake-O-Gram */ = {
 			isa = PBXGroup;
 			children = (
+				6D0D5B191E12A573004AAD7A /* Services */,
 				6D1451DD1E058D9D00F78CDF /* Fake-O-Gram.entitlements */,
 				6D5C16E51E01371A005F6B33 /* Model */,
 				6D5C16E61E01371F005F6B33 /* View */,
@@ -93,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				6D2DA9171E027DF2006A84E3 /* CircularButton.swift */,
+				6D8CB9E01E0D744B005F2939 /* CellItem.swift */,
+				6D8CB9E21E0D75D6005F2939 /* CircularImage.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -253,7 +270,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D8CB9E11E0D744B005F2939 /* CellItem.swift in Sources */,
+				6D0D5B1B1E12A582004AAD7A /* DataService.swift in Sources */,
 				6D1451DF1E058E2D00F78CDF /* FeedVC.swift in Sources */,
+				6D8CB9E31E0D75D6005F2939 /* CircularImage.swift in Sources */,
 				6D2DA9181E027DF2006A84E3 /* CircularButton.swift in Sources */,
 				6D2DA1FF1E0132AA00C40F56 /* LoginVC.swift in Sources */,
 				6D2DA1FD1E0132AA00C40F56 /* AppDelegate.swift in Sources */,
