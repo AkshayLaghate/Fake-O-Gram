@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CellItem: UITableViewCell {
     
@@ -23,9 +24,33 @@ class CellItem: UITableViewCell {
         // Initialization code
     }
 
-    func updateCell(post: Post){
+    func updateCell(post: Post, img: UIImage?){
         self.postText.text = post.text
         self.likesCountLabel.text = "\(post.likes)"
+        
+        if img != nil{
+            self.postImage.image = img
+        }
+        else{
+            let ref = FIRStorage.storage().reference(forURL: post.imageUrl)
+            ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                
+                if error != nil{
+                    //handle error
+                }
+                else{
+                    
+                    print("image downloaded from storage")
+                    if let imageData = data{
+                        if let image = UIImage(data: imageData){
+                            self.postImage.image = image
+                            FeedVC.imageCache.setObject(image, forKey: post.imageUrl as NSString)
+                        }
+                    }
+                }
+                
+            })
+        }
         
     }
     
