@@ -16,7 +16,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var tabelView: UITableView!
     @IBOutlet weak var imagePickerButton: UIImageView!
     
+    @IBOutlet weak var captionField: UITextField!
+    @IBOutlet weak var postButton: CircularButton!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    
+    var imageSelected = false
     
     var posts = [Post]()
     
@@ -80,11 +84,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             
             if let image = FeedVC.imageCache.object(forKey: posts[indexPath.row].imageUrl as NSString){
                 cell.updateCell(post: posts[indexPath.row], img: image)
-                return cell
+                
             }else{
                 cell.updateCell(post: posts[indexPath.row], img: nil)
-                return cell
+                
             }
+            
+            return cell
 
         }else{
             return CellItem()
@@ -93,13 +99,69 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     
     @IBAction func addImageTapped(_ sender: Any) {
-                present(imagePicker, animated: true, completion: nil)
+        
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func postPressed(_ sender: CircularButton) {
+        
+        captionField.resignFirstResponder()
+        
+        guard let caption = captionField.text, caption != "" else {
+            print("Caption Required")
+            return
+        }
+        
+        guard  let image = imagePickerButton.image, imageSelected == true else {
+            print("Image is required")
+            return
+        }
+        
+        if let imageData = UIImageJPEGRepresentation(image, 0.2){
+            
+            let imgUID = NSUUID().uuidString
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            DataService.ds.REF_POST_STOREGE.child(imgUID).put(imageData, metadata: metadata){(meta, error) in
+                
+                if error != nil{
+                    print("\(error)")
+                }
+                else{
+                    let downloadUrl = meta?.downloadURL()?.absoluteString
+                    
+                    if let url = downloadUrl{
+                        self.createPost(imgUrl: url)
+                    }
+                    
+                }
+            }
+            
+        }
+        
+    }
+    
+    func createPost(imgUrl: String){
+        let post: Dictionary<String,AnyObject> = [
+            "text":captionField.text! as AnyObject,
+            "imageUrl":imgUrl as AnyObject,
+            "likes":0 as AnyObject
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        captionField.text = ""
+        imageSelected = false
+        imagePickerButton.image = UIImage(named: "add-image")
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage{
             imagePickerButton.image = image
+            imageSelected = true
         }
         
         imagePicker.dismiss(animated: true, completion: nil)
